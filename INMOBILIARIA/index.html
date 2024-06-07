@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria XXX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Inmobiliaria LexaLi</h1>
+        <nav>
+            <ul>
+                <li><a href="#propiedades" class="nav-link" data-target="propiedades">Propiedades</a></li>
+                <li><a href="#transacciones" class="nav-link" data-target="transacciones">Transacciones</a></li>
+                <li><a href="#reportes" class="nav-link" data-target="reportes">Reportes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="propiedades" class="active">
+            <h2>Registrar Propiedad</h2>
+            <form id="registrarPropiedadForm">
+                <label for="tipoPropiedad">Tipo de Propiedad:</label>
+                <select id="tipoPropiedad" name="tipoPropiedad" required>
+                    <option value="casa">Casa</option>
+                    <option value="apartamento">Apartamento</option>
+                    <option value="estudio">Estudio</option>
+                    <option value="terreno">Terreno</option>
+                </select>
+                <label for="ubicacion">Ubicación:</label>
+                <input type="text" id="ubicacion" name="ubicacion" required>
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" required>
+                <button type="submit">Registrar Propiedad</button>
+            </form>
+        </section>
+        <section id="transacciones">
+            <h2>Transacciones</h2>
+            <form id="transaccionForm">
+                <label for="propiedadID">ID de la Propiedad:</label>
+                <input type="text" id="propiedadID" name="propiedadID" required>
+                <label for="tipoTransaccion">Tipo de Transacción:</label>
+                <select id="tipoTransaccion" name="tipoTransaccion" required>
+                    <option value="compra">Compra</option>
+                    <option value="venta">Venta</option>
+                </select>
+                <label for="famoso">Nombre del Famoso:</label>
+                <input type="text" id="famoso" name="famoso" required>
+                <button type="submit">Realizar Transacción</button>
+            </form>
+        </section>
+        <section id="reportes">
+            <h2>Reportes</h2>
+            <button id="generarReporte">Generar Reporte</button>
+            <div id="reporteResultado"></div>
+        </section>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>¿Está seguro de que desea realizar esta transacción?</p>
+            <button id="confirmarTransaccion">Confirmar</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
